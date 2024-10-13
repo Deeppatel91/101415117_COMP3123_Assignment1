@@ -6,7 +6,7 @@ const employeeRoutes = require('./routes/EmployeeRoutes');
 const app = express();
 app.use(express.json());
 
-const MONGODB_URI = 'mongodb+srv://Deep:<password>@cluster0.ztcjj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';   //hiding my password
+const MONGODB_URI = 'mongodb+srv://Deep:Deep9195@cluster0.ztcjj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(MONGODB_URI)
     .then(() => {
