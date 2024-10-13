@@ -6,7 +6,7 @@ const employeeRoutes = require('./routes/EmployeeRoutes');
 const app = express();
 app.use(express.json());
 
-const MONGODB_URI = 'mongodb+srv://Deep:Deep9195@cluster0.ztcjj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGODB_URI = 'mongodb+srv://Deep:<password>@cluster0.ztcjj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';   //hiding my password
 
 mongoose.connect(MONGODB_URI)
     .then(() => {
@@ -19,9 +19,8 @@ mongoose.connect(MONGODB_URI)
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/emp', employeeRoutes);
 
-// Home page route (this handles GET requests to "/")
 app.get('/', (req, res) => {
-    res.send('<h1>Welcome  </h1><p>This is the home page!</p>');
+    res.send('<h1>Welcome  </h1><p>This is the home page for my Vercel deployment</p>');
 });
 
 const PORT = process.env.PORT || 3001;
