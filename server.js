@@ -19,6 +19,10 @@ mongoose.connect(MONGODB_URI)
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/emp', employeeRoutes);
 
+// Home page route (this handles GET requests to "/")
+app.get('/', (req, res) => {
+    res.send('<h1>Welcome  </h1><p>This is the home page!</p>');
+});
 
 const PORT = process.env.PORT || 3001;
 const server = app.listen(PORT, () => {
