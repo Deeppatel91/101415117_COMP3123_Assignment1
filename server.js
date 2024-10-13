@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const employeeRoutes = require('./routes/EmployeeRoutes');
 const userRoutes = require('./routes/UserRoutes');
+const employeeRoutes = require('./routes/EmployeeRoutes');
 
 const app = express();
 app.use(express.json());
@@ -16,11 +16,11 @@ mongoose.connect(MONGODB_URI)
         console.error('Error connecting to MongoDB Atlas:', err);
         process.exit(1);
     });
-
-app.use('/api/v1/emp', employeeRoutes);
 app.use('/api/v1/user', userRoutes);
+app.use('/api/v1/emp', employeeRoutes);
 
-const PORT = process.env.PORT || 5000;
+
+const PORT = process.env.PORT || 3001;
 const server = app.listen(PORT, () => {
     console.log(`Server is running on port http://localhost:${PORT}`);
 });
